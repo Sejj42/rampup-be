@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { OrdersModule } from './orders/orders.module';
 import { PodsModule } from './pods/pods.module';
 
 @Module({
   imports: [
     PodsModule,
+    OrdersModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
