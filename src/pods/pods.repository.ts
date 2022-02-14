@@ -12,7 +12,7 @@ export class PodsRepository extends Repository<Pod> {
 
     if (search) {
       query.andWhere(
-        'LOWER(pod.name) LIKE LOWER(:search) OR LOWER(pod.weightInG) LIKE LOWER(:search) OR LOWER(pod.color) LIKE LOWER(:search) OR LOWER(pod.brand) LIKE LOWER(:search) OR LOWER(pod.price) LIKE LOWER(:search) OR LOWER(pod.calories) LIKE LOWER(:search) OR LOWER(pod.protein) LIKE LOWER(:search) OR LOWER(pod.sugar) LIKE LOWER(:search) OR LOWER(pod.carbohydrates) LIKE LOWER(:search) OR LOWER(pod.sodium) LIKE LOWER(:search) OR LOWER(pod.cholesterol) LIKE LOWER(:search) OR LOWER(pod.totalFats) LIKE LOWER(:search)',
+        '(LOWER(pod.name) LIKE LOWER(:search) OR LOWER(pod.weightInG) LIKE LOWER(:search) OR LOWER(pod.color) LIKE LOWER(:search) OR LOWER(pod.brand) LIKE LOWER(:search) OR LOWER(pod.price) LIKE LOWER(:search) OR LOWER(pod.calories) LIKE LOWER(:search) OR LOWER(pod.protein) LIKE LOWER(:search) OR LOWER(pod.sugar) LIKE LOWER(:search) OR LOWER(pod.carbohydrates) LIKE LOWER(:search) OR LOWER(pod.sodium) LIKE LOWER(:search) OR LOWER(pod.cholesterol) LIKE LOWER(:search) OR LOWER(pod.totalFats) LIKE LOWER(:search))',
         { search: `%${search}%` },
       );
     }

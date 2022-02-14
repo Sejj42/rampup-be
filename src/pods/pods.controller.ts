@@ -38,7 +38,7 @@ export class PodsController {
     return this.podsService.deletePodById(id);
   }
 
-  @Patch('/:id/status')
+  @Patch('/:id')
   updatePod(
     @Param(':id') id: string,
     @Body() updatePodDto: UpdatePodDto,
@@ -58,6 +58,7 @@ export class PodsController {
       totalFats,
     } = updatePodDto;
     return this.podsService.updatePodById(
+      id,
       name,
       weightInG,
       color,

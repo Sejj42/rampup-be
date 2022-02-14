@@ -38,7 +38,7 @@ export class OrdersContoller {
     return this.ordersService.deleteOrderById(id);
   }
 
-  @Patch('/:id/status')
+  @Patch('/:id')
   updateOrder(
     @Param(':id') id: string,
     @Body() updateOrderDto: UpdateOrderDto,

@@ -35,6 +35,7 @@ export class PodsService {
 
   async updatePodById(
     id: string,
+    name: string,
     weightInG: number,
     color: string,
     brand: string,
@@ -48,6 +49,7 @@ export class PodsService {
     totalFats: number,
   ): Promise<Pod> {
     const pod = await this.getPodById(id);
+    pod.name = name;
     pod.weightInG = weightInG;
     pod.color = color;
     pod.brand = brand;

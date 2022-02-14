@@ -17,7 +17,7 @@ export class Pod {
   @Column()
   brand: string;
 
-  @Column()
+  @Column('decimal', { precision: 5, scale: 2 })
   price: number;
 
   @Column('decimal', { precision: 5, scale: 2 })

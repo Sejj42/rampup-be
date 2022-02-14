@@ -9,10 +9,12 @@ export class OrdersRepository extends Repository<Order> {
     const { search } = filterDto;
 
     const query = this.createQueryBuilder('order');
+    console.log(filterDto);
+    console.log(search);
 
     if (search) {
       query.andWhere(
-        `LOWER(order.customerFirstName) LIKE LOWER(:search) OR LOWER(order.customerLastName) LIKE LOWER(:search) OR LOWER(order.totalQty) LIKE LOWER(:search) OR LOWER(order.price) LIKE LOWER(:search) OR LOWER(order.shippingCost) LIKE LOWER(:search)`,
+        `(LOWER(order.customerFirstName) LIKE LOWER(:search) OR LOWER(order.customerLastName) LIKE LOWER(:search) OR LOWER(order.totalQty) LIKE LOWER(:search) OR LOWER(order.price) LIKE LOWER(:search) OR LOWER(order.shippingCost) LIKE LOWER(:search) OR LOWER(order.created_at) LIKE LOWER(:search))`,
         { search: `%${search}%` },
       );
     }
