@@ -5,6 +5,9 @@ export class CreatePodDto {
   name: string;
 
   @IsNotEmpty()
+  description: string;
+
+  @IsNotEmpty()
   weightInG: number;
 
   @IsNotEmpty()
@@ -12,6 +15,9 @@ export class CreatePodDto {
 
   @IsNotEmpty()
   brand: string;
+
+  @IsNotEmpty()
+  imageURL: string;
 
   @IsNotEmpty()
   price: number;

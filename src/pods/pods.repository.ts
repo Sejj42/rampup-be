@@ -23,9 +23,11 @@ export class PodsRepository extends Repository<Pod> {
   async createPod(createPodDto: CreatePodDto): Promise<Pod> {
     const {
       name,
+      description,
       weightInG,
       color,
       brand,
+      imageURL,
       price,
       calories,
       protein,
@@ -37,9 +39,11 @@ export class PodsRepository extends Repository<Pod> {
     } = createPodDto;
     const pod = this.create({
       name,
+      description,
       weightInG,
       color,
       brand,
+      imageURL,
       price,
       calories,
       protein,

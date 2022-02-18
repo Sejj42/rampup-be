@@ -9,6 +9,9 @@ export class Pod {
   name: string;
 
   @Column()
+  description: string;
+
+  @Column()
   weightInG: number;
 
   @Column()
@@ -16,6 +19,9 @@ export class Pod {
 
   @Column()
   brand: string;
+
+  @Column()
+  imageURL: string;
 
   @Column('decimal', { precision: 5, scale: 2 })
   price: number;
