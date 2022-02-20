@@ -9,8 +9,6 @@ export class OrdersRepository extends Repository<Order> {
     const { search } = filterDto;
 
     const query = this.createQueryBuilder('order');
-    console.log(filterDto);
-    console.log(search);
 
     if (search) {
       query.andWhere(
