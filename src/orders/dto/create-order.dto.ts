@@ -15,4 +15,22 @@ export class CreateOrderDto {
 
   @IsNotEmpty()
   shippingCost: number;
+
+  @IsNotEmpty()
+  firstPodId: string;
+
+  @IsNotEmpty()
+  secondPodId: string;
+
+  @IsNotEmpty()
+  firstPodQty: number;
+
+  @IsNotEmpty()
+  secondPodQty: number;
+
+  @IsNotEmpty()
+  firstPodPrice: number;
+
+  @IsNotEmpty()
+  secondPodPrice: number;
 }

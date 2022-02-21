@@ -27,4 +27,22 @@ export class Order {
 
   @Column('decimal', { precision: 5, scale: 2 })
   shippingCost: number;
+
+  @Column()
+  firstPodId: string;
+
+  @Column('int')
+  firstPodQty: number;
+
+  @Column('decimal', { precision: 5, scale: 2 })
+  firstPodPrice: number;
+
+  @Column()
+  secondPodId: string;
+
+  @Column('int')
+  secondPodQty: number;
+
+  @Column('decimal', { precision: 5, scale: 2 })
+  secondPodPrice: number;
 }

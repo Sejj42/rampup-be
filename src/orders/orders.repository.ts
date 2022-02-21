@@ -27,6 +27,12 @@ export class OrdersRepository extends Repository<Order> {
       totalQty,
       price,
       shippingCost,
+      firstPodId,
+      secondPodId,
+      firstPodQty,
+      secondPodQty,
+      firstPodPrice,
+      secondPodPrice,
     } = createOrderDto;
     const order = this.create({
       customerFirstName,
@@ -34,6 +40,12 @@ export class OrdersRepository extends Repository<Order> {
       totalQty,
       price,
       shippingCost,
+      firstPodId,
+      secondPodId,
+      firstPodQty,
+      secondPodQty,
+      firstPodPrice,
+      secondPodPrice,
     });
     await this.save(order);
     return order;
